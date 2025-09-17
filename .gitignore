@@ -1,0 +1,16 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env.example
+.env
+extract/sat df.csv
+data/sat df.csv
+data/sat_df.csv
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
+*.csv
+*.db
