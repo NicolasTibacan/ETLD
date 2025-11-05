@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  etld-f1:
+    build: .
+    image: etld-f1-project:latest
+    container_name: etld-f1-container
+    volumes:
+      # Montar el directorio de plots para guardar las gráficas en el host
+      - ./analist/plots:/app/analist/plots
+      # Montar el directorio de archive para acceder a los CSVs
+      - ./Extract/archive:/app/Extract/archive
+      # Guardar la base de datos SQLite en el host (si se usa)
+      - ./data:/app/data
+    environment:
+      # Variables de entorno para la conexión a Railway (si las usas)
+      # Descomenta y configura según tus necesidades
+      # - DB_HOST=your_railway_host
+      # - DB_PORT=5432
+      # - DB_NAME=your_database
+      # - DB_USER=your_user
+      # - DB_PASSWORD=your_password
+      - MPLBACKEND=Agg
+    # Si quieres que el contenedor permanezca activo
+    # command: tail -f /dev/null
